@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support a personal cause by donating USDT (BEP-20). Every contribution matters and helps cover housing, education, and healthcare needs.">
+  <meta name="keywords" content="donation, USDT, crypto donation, help, personal cause, support, charity, BEP-20">
+  <title>Support My Journey with a Donation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+    section { padding: 20px; max-width: 800px; margin: auto; }
+    h1, h2 { color: #4CAF50; }
+    .donate-box { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
+    .wallet { font-family: monospace; background: #eee; padding: 10px; border-radius: 5px; display: inline-block; margin: 10px 0; }
+    button { background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    footer { text-align: center; padding: 20px; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Support My Journey</h1>
+    <p>Your generosity can make a real difference</p>
+  </header>
+
+  <section>
+    <h2>My Story</h2>
+    <p>
+      Hello, my name is Mykola. I am reaching out with honesty and transparency. Like many people, I am going through a challenging time financially. I am working hard to improve my life and future, but currently I lack the resources needed to cover essential personal goals.
+    </p>
+    <p>
+      The donations I receive will go toward three main areas:
+    </p>
+    <ul>
+      <li><strong>Housing:</strong> Creating stability with a safe living environment.</li>
+      <li><strong>Education:</strong> Investing in learning and skills to build a sustainable future.</li>
+      <li><strong>Healthcare:</strong> Covering medical expenses and maintaining good health.</li>
+    </ul>
+
+    <h2>Why Your Help Matters</h2>
+    <p>
+      Every contribution, big or small, truly helps me take another step forward. Even if you cannot donate, sharing this page means a lot.
+    </p>
+
+    <div class="donate-box">
+      <h2>Donate USDT (BEP-20)</h2>
+      <p>Wallet Address:</p>
+      <div class="wallet" id="walletAddress">0x8b8817b28a378961ae1c5beee9eaea717cd03471</div>
+      <p>Scan this QR code with your wallet app to donate directly:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0x8b8817b28a378961ae1c5beee9eaea717cd03471" alt="USDT Wallet QR Code">
+      <br><br>
+      <button onclick="copyWallet()">Copy Wallet Address</button>
+    </div>
+
+    <h2>Transparency & Trust</h2>
+    <p>
+      This is a personal fundraising page. I do not promise rewards or returns — only gratitude for your support. All donations are voluntary and go directly to my wallet. You can verify transactions publicly on <a href="https://bscscan.com/address/0x8b8817b28a378961ae1c5beee9eaea717cd03471" target="_blank">BscScan</a>.
+    </p>
+
+    <h2>How You Can Help</h2>
+    <ul>
+      <li>Donate USDT (BEP-20) to the wallet above.</li>
+      <li>Share this page with friends or on social media.</li>
+      <li>Send words of encouragement — they mean more than you know.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Support My Journey | This page is for voluntary donations only.</p>
+  </footer>
+
+  <script>
+    function copyWallet() {
+      const wallet = document.getElementById("walletAddress").innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(wallet).then(() => {
+          alert("Wallet address copied!");
+        }).catch(() => {
+          fallbackCopy(wallet);
+        });
+      } else {
+        fallbackCopy(wallet);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const input = document.createElement("input");
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      alert("Wallet address copied!");
+    }
+  </script>
+</body>
+</html>
