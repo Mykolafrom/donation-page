@@ -3,14 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support My Journey</title>
+  <title>Donate USDT – Support My Crypto Journey</title>
 
   <!-- Google Search Console verification -->
   <meta name="google-site-verification" content="Y_gx9_uPHzGDn8dPl4KYsw5Knemh05cceyZHtGYVNUU" />
 
-  <meta name="description" content="Support my personal journey by donating USDT. Every contribution helps me move forward in life." />
-  <meta name="keywords" content="support, donation, USDT, BEP20, help, personal journey" />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Support my journey by sending USDT (BEP-20). Every crypto donation helps me achieve goals, fund projects, and continue my personal journey." />
+  <meta name="keywords" content="USDT donation, crypto donation, send USDT, BEP20 wallet, support creator, help me, financial support, cryptocurrency help, blockchain donation, tether donation, tip me, fund my journey, donate crypto, crypto charity, personal journey, crypto support" />
   <meta name="author" content="Anonymous" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Donate USDT – Support My Crypto Journey" />
+  <meta property="og:description" content="Support my journey by sending USDT (BEP-20). Every crypto donation helps me achieve goals and fund projects." />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:site_name" content="Support My Journey" />
+  <meta property="og:image" content="https://cryptologos.cc/logos/tether-usdt-logo.png" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Donate USDT – Support My Crypto Journey" />
+  <meta name="twitter:description" content="Support my journey by sending USDT (BEP-20). Every crypto donation helps me achieve goals and fund projects." />
+  <meta name="twitter:image" content="https://cryptologos.cc/logos/tether-usdt-logo.png" />
+  <meta name="twitter:site" content="@YourTwitterHandle" />
+
   <link rel="icon" href="https://cryptologos.cc/logos/tether-usdt-logo.png" type="image/png">
 
   <style>
@@ -27,9 +46,9 @@
       background: #fff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
-    h1 {
+    h1, h2 {
       color: #222;
     }
     .wallet-box {
@@ -49,6 +68,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
+      transition: background 0.3s;
     }
     button:hover {
       background: #218838;
@@ -56,29 +76,31 @@
     .qr {
       margin: 20px 0;
     }
+    a.button-link {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Support My Journey</h1>
-    <p>Hello! I am kindly asking for your support. Any USDT donation helps me pursue my goals and overcome challenges in life.  
-    If you feel generous today, your contribution will truly make a difference ❤️</p>
+    <h1>Donate USDT – Support My Crypto Journey</h1>
+    <p>Hello! I am asking for your support. Any USDT (BEP-20) donation helps me fund projects, continue my personal journey, and achieve my goals. Your crypto contribution makes a real difference.</p>
 
-    <h3>My USDT (BEP-20) Wallet Address:</h3>
+    <h2>My USDT (BEP-20) Wallet Address:</h2>
     <div class="wallet-box" id="wallet">
       0x8b8817b28a378961ae1c5beee9eaea717cd03471
     </div>
-    <button onclick="copyWallet()">Copy Address</button>
-    <a href="https://bscscan.com/address/0x8b8817b28a378961ae1c5beee9eaea717cd03471" target="_blank">
+    <button onclick="copyWallet()">Copy Wallet Address</button>
+    <a class="button-link" href="https://bscscan.com/address/0x8b8817b28a378961ae1c5beee9eaea717cd03471" target="_blank">
       <button>View on BscScan</button>
     </a>
 
     <div class="qr">
-      <h3>Scan QR Code:</h3>
+      <h2>Scan QR Code to Send USDT</h2>
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0x8b8817b28a378961ae1c5beee9eaea717cd03471" alt="USDT Wallet QR Code">
     </div>
 
-    <p>Thank you for your kindness and generosity 🙏</p>
+    <p>Thank you for your generosity 🙏</p>
   </div>
 
   <script>
@@ -87,14 +109,9 @@
       if (navigator.clipboard) {
         navigator.clipboard.writeText(wallet).then(() => {
           alert("Wallet address copied!");
-        }).catch(() => {
-          fallbackCopy(wallet);
-        });
-      } else {
-        fallbackCopy(wallet);
-      }
+        }).catch(() => { fallbackCopy(wallet); });
+      } else { fallbackCopy(wallet); }
     }
-
     function fallbackCopy(text) {
       const input = document.createElement("input");
       input.value = text;
